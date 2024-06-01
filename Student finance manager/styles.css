@@ -1,0 +1,421 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0e5eb;
+}
+
+main.blurred {
+    filter: blur(5px);
+    pointer-events: none;
+    user-select: none;
+}
+
+.payment-container,
+.add-money-container,
+.reminder-container {
+    pointer-events: auto;
+    user-select: auto;
+}
+
+header {
+    background-color: #2dd7a1;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.title{
+    color: #b8ff1e;
+    font-style: italic;
+}
+/* Style the dropdown button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.dropdown-content button {
+    border: none;
+    background-color: inherit;
+    font-size: inherit;
+}
+
+
+.user-menu span {
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    background-color: #e0e5eb;
+}
+
+.container>div:nth-child(1) {
+    grid-column: span 2;
+}
+
+.container>div:nth-child(2) {
+    grid-column: span 2;
+}
+
+
+.first {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.first>div {
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+}
+
+.second {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0px;
+}
+
+.second>div {
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.transaction-remainder {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.transaction-remainder>div {
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 95%;
+    height: 450px;
+}
+
+/* .progres-graph {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.progres-graph>div:nth-child(1) {
+    grid-column: span 2;
+}
+
+.progres-graph>div:nth-child(2) {
+    grid-column: span 2;
+} */
+
+.progres-graph>div {
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 95%;
+    height: 450px;
+    background-color: white;
+}
+
+.transaction>div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reminder div {
+    background-color: rgb(225, 223, 223);
+    height: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.reminder button{
+    background-color: #6c6c6d;
+    border: none;
+    height: 25px;
+    width: 60px;
+    border-radius: 5px;
+    color: white;
+}
+
+.reminder button:hover{
+    background-color: rgb(253, 48, 48);
+}
+
+.reminder div div:nth-child(3) {
+    float: right;
+}
+
+.reminder div div:nth-child(1) {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* .reminder .btns{
+    display: flex;
+    justify-content: space-between;
+} */
+
+/* /////////////////////////////////////////// */
+
+.payment-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0%;
+    bottom: 20%;
+    left: 30%;
+    display: none;
+}
+
+.payment-container h2,
+.add-money-container h2 {
+    text-align: center;
+    color: #333333;
+}
+
+.payment-container label,
+.add-money-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555555;
+}
+
+.add-money-container input[type="number"],
+.payment-container input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.btn-Cancel-reminder,
+.add-money-container .btn-Cancel-form,
+.payment-container .btn-Cancel {
+    float: right;
+    border: none;
+    font-size: 22px;
+    border-radius: 4px;
+}
+
+.btn-pay:hover,
+.btn-Cancel:hover,
+.btn-Cancel-reminder:hover {
+    background-color: #fe6a6a;
+    /* Darker Red on Hover */
+}
+
+.btn-pay {
+    width: 100%;
+    padding: 10px;
+    background-color: #ff6b6b;
+    /* Bright Red */
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.add-money-container {
+    width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0%;
+    bottom: 20%;
+    left: 30%;
+    display: none;
+}
+
+.btn-add,
+.btn-add-task {
+    width: 100%;
+    padding: 10px;
+    background-color: #77e477;
+    /* Bright Red */
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.btn-add:hover,
+.btn-add-task:hover {
+    background-color: #42d442;
+}
+
+.btn-Cancel-form:hover {
+    background-color: #fa5656;
+}
+
+.reminder-container {
+    width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0%;
+    bottom: 20%;
+    left: 30%;
+    display: none;
+}
+
+.reminder-container input,
+.reminder-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+i {
+    font-size: 25px;
+    z-index: 1;
+}
+
+.bx-question-mark {
+    color: #ff69b4;
+}
+
+.bx-money-withdraw {
+    color: rgb(255, 209, 59);
+}
+
+.bx-restaurant,
+.bxs-drink {
+    color: #ff6347;
+}
+
+.bxs-school {
+    color: #1e90ff;
+}
+
+.bx-dollar-circle {
+    color: #2dd7a1;
+}
+
+.scroll {
+    overflow-y: scroll;
+    background-color: white;
+}
+
+.cat {
+    color: #000407;
+}
+
+.amt {
+    color: rgb(180, 0, 0)
+}
+
+.date {
+    color: #000407;
+}
+
+/* Category Colors */
+.School {
+    border-left: 10px solid rgb(30, 144, 255);
+}
+
+.Food {
+    border-left: 10px solid rgb(255, 99, 71);
+}
+
+.Bill{
+    border-left: 10px solid rgb(255, 209, 59);
+}
+
+.Other {
+    border-left: 10px solid rgb(255, 105, 180);
+}
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fa{
+    text-decoration: none;
+    color: white;
+}
