@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Finance<span class="title">Manager</span></h1>
+        <div class="user-menu">
+            <span><span class="user">message</span> <a href="./Profile Template/profile.html"><i class="fa fa-user-circle" aria-hidden="true"></i></a></span>
+            <div class="dropdown">
+                <button class="dropbtn"><i class="fa fa-bars" aria-hidden="true"></i> Menu</button>
+                <div class="dropdown-content">
+                    <a href="#"><button class="btn-payment">Payment</button></a>
+                    <a href="#"><button class="btn-income">Income</button></a>
+                    <a href="#"><button class="btn-reminder">Reminder</button></a>
+                    <a href="./Profile Template/profile.html">Profile</a>
+                    <a href="./login/Login.html">Log out</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="first">
+            <div class="balance"><i class='bx bx-dollar-circle'></i><p>BALANCE ZMW</p><span>124134</span></div>
+            <div class="School">
+                <i class='bx bxs-school'></i><p> School Fees</p>
+                <p class="School-balance">ZMW <span>0</span></p>
+            </div>
+            <div class="Food-and-drink">
+                <i class='bx bx-restaurant'></i><i class='bx bxs-drink'></i><p>Food & Drink</p>
+                <p class="FD-balance"> ZMW <span>63847</span></p>
+            </div>
+            <div class="Bills-and-utilities">
+                <i class='bx bx-money-withdraw'></i><p>Bill & Utilities</p>
+                <p class="BU-balance"> ZMW <span>63847</span></p>
+            </div>
+            <div class="">
+                <i class='bx bx-question-mark'></i><p> Other</p>
+                <p class="other">ZMW <span>63847</span></p>
+            </div>
+        </div>
+        <div class="second">
+            <div class="transaction-remainder">
+                <div class="transaction scroll">
+                    <div >
+                        <!-- <span>category</span>
+                            <span>amount</span>
+                            <span>date</span> -->
+                    </div>
+                    <!-- <hr> -->
+                </div>
+
+                <div class="scroll">
+                    <div class="reminder ">
+                        <div style="display: none;">
+                            <div>
+                                <span>This will follow you everywhere🤡💀☠ </span>
+                                <input type="checkbox" name="" id="checkbox">
+                            </div>
+                            <br>
+                            <div>
+                                date
+                            </div>
+                            <div>
+                                <button>Delete</button>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="progres-graph">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+                <!-- <div>graph</div> -->
+            </div>
+        </div>
+    </main>
+    <div class="payment-container">
+        <button class="btn-Cancel">&times;</button>
+        <form class="payment-form">
+            <h2>Make Payment</h2>
+            <label for="amount">Amount:</label>
+            <input type="number" name="" id="amount" min="0" required>
+            <label for="Categories">Categories:</label>
+            <select id="Categories">
+                <option value="School">School</option>
+                <option value="Food and Drink">Food and Drink</option>
+                <option value="Bill and Utilities">Bill and Utilities</option>
+                <option value="Other">Other</option>
+            </select>
+            <button type="button" class="btn-pay">Pay</button><br>
+        </form>
+    </div>
+
+    <div class="add-money-container">
+        <button class="btn-Cancel-form">&times;</button>
+        <form class="add-money-form">
+            <h2>Add Money</h2>
+            <label for="sum">Amount</label>
+            <input type="number" name="" id="Add-amount" min="0" required>
+            <button class="btn-add">Add Money</button>
+        </form>
+    </div>
+
+    <div class="reminder-container">
+        <button class="btn-Cancel-reminder">&times;</button>
+        <form class="set-reminder-form">
+            <h2>Set Reminder</h2>
+            <label>Set reminder:</label>
+            <textarea rows="3" id="task"></textarea>
+            <label for="">Reminder Date:</label>
+            <input type="date" id="date">
+            <button class="btn-add-task">Add Task</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
